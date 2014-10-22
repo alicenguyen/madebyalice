@@ -10,6 +10,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 var express = require('express');
 var mongoose = require('mongoose');
 var config = require('./config/environment');
+var gzippo =require('gzippo');
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
@@ -22,6 +23,8 @@ var app = express();
 var server = require('http').createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
+app.use(gzippo.staticGzip("" + __dirname + "/dist"));
+app.listen(process.env.PORT || 5000);
 
 // Start server
 server.listen(config.port, config.ip, function () {
