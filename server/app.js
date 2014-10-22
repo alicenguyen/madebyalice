@@ -13,23 +13,17 @@ var config = require('./config/environment');
 var gzippo =require('gzippo');
 
 // Connect to database
-mongoose.connect(config.mongo.uri, config.mongo.options);
+mongoose.connect("postgres://upkhsvvcvaewgj:eF0_sk6v4aihVaJsZXFXdkJKYW@ec2-174-129-21-42.compute-1.amazonaws.com:5432/ddhmp4dqblhojs", config.mongo.options);
 
 // Populate DB with sample data
 if(config.seedDB) { require('./config/seed'); }
 
 // Setup server
 var app = express();
-var server = require('http').createServer(app);
-require('./config/express')(app);
-require('./routes')(app);
 app.use(gzippo.staticGzip("" + __dirname + "/dist"));
 app.listen(process.env.PORT || 5000);
 
 // Start server
-server.listen(config.port, config.ip, function () {
-  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
-});
 
 // Expose app
 exports = module.exports = app;
