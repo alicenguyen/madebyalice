@@ -13,7 +13,7 @@ var config = require('./config/environment');
 var gzippo =require('gzippo');
 
 // Connect to database
-mongoose.connect("postgres://upkhsvvcvaewgj:eF0_sk6v4aihVaJsZXFXdkJKYW@ec2-174-129-21-42.compute-1.amazonaws.com:5432/ddhmp4dqblhojs", config.mongo.options);
+mongoose.connect(config.mongo.uri, config.mongo.options);
 
 // Populate DB with sample data
 if(config.seedDB) { require('./config/seed'); }
