@@ -20,10 +20,15 @@ if(config.seedDB) { require('./config/seed'); }
 
 // Setup server
 var app = express();
-app.use(gzippo.staticGzip("" + __dirname + "/dist"));
-app.listen(process.env.PORT || 5000);
+
+var server = require('http').createServer(app);
+require('./config/express')(app);
+require('./routes')(app);
 
 // Start server
+server.listen(config.port, config.ip, function () {
+  console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
+});
 
 // Expose app
 exports = module.exports = app;
