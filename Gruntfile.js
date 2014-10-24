@@ -502,8 +502,9 @@ module.exports = function (grunt) {
 						region: 'eu-west-1',
 						applicationName: 'MadeByAlice',
 						environmentCNAME: 'madebyalice-env.elasticbeanstalk.com ',
-						aws_access_key_id:"AKIAJ6FW4LDMCBC3IFHA",
-  						aws_secret_access_key:"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",
+						accessKeyId:"AKIAJ6FW4LDMCBC3IFHA",
+  						secretAccessKey:"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",
+						sourceBundle: 'madebyalice.zip'
 					}
 			}
 		},
