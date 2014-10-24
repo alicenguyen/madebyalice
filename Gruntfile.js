@@ -497,16 +497,6 @@ module.exports = function (grunt) {
 			},
 
 			// aws beanstalk deployment
-			awsebtdeploy: {
-					options: {
-						region: 'eu-west-1',
-						applicationName: 'MadeByAlice',
-						environmentCNAME: 'madebyalice-env.elasticbeanstalk.com ',
-						accessKeyId:"AKIAJ6FW4LDMCBC3IFHA",
-  						secretAccessKey:"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",
-						sourceBundle: 'madebyalice.zip'
-					}
-			}
 		},
 	});
 

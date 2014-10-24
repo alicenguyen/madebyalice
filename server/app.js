@@ -22,14 +22,6 @@ if(config.seedDB) { require('./config/seed'); }
 // Setup server
 var app = express();
 
-app.configure('production', function() {
-	console.log('Using production settings.');
-	app.set('connection', mysql.createConnection({
-		host: process.env.RDS_HOSTNAME,
-		user: process.env.RDS_USERNAME,
-		password: process.env.RDS_PASSWORD,
-		port: process.RDS_PORT }));
-});
 
 var server = require('http').createServer(app);
 require('./config/express')(app);
