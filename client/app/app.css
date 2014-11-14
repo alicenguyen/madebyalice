@@ -47,7 +47,7 @@
 
 a:hover.mba-navbar-brand {
 	text-decoration: none;
-	color:#454545;
+	color:#6d5d61;
 	
 }
 
@@ -56,8 +56,12 @@ a:hover.mba-navbar-brand {
 }
 
 body {
-	background-color:#242424;
+	/* background-color:#242424; */
 }
 .navbar {
 	background-color:#242424;
+}
+
+a {
+	color:#584b4e;
 }

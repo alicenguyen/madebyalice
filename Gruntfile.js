@@ -299,7 +299,7 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Package all the html partials into a single javascript payload
+		// Package all the html partials into a single javascript payoad
 		ngtemplates: {
 			options: {
 				// This should be the name of your apps angular module
@@ -494,10 +494,8 @@ module.exports = function (grunt) {
 						'<%= yeoman.client %>/{app,components}/**/*.css'
 					]
 				}
-			},
-
-			// aws beanstalk deployment
-		},
+			}
+		}
 	});
 
 	// Used for delaying livereload until after server has restarted
@@ -618,5 +616,4 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('beanstalk', ['awsebtdeploy']);
 
-	grunt.loadNpmTasks('grunt-awsebtdeploy');
 };

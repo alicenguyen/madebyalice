@@ -7,6 +7,12 @@ angular.module('madebyaliceApp')
       'link': '/'
     }];
 
+	$scope.workItems = [
+		{'title': 'programming / development'},
+		{'title': 'film / production'},
+		{'title': 'misc.'}
+	];
+
     $scope.isCollapsed = true;
 
     $scope.isActive = function(route) {

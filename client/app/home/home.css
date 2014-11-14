@@ -1,6 +1,7 @@
 header {
-	color:#f7f7f7;
+	color:#241F20;
 	font-weight: 600;
+	margin-top: 15px;
 }
 
 .titles {
@@ -8,7 +9,6 @@ header {
 }
 
 .body{
-color: #f2f2f2;
 
 }
 
@@ -17,5 +17,5 @@ ul{
 }
 
 .works {
-margin-bottom: 15px;
+	margin-bottom: 15px;
 }

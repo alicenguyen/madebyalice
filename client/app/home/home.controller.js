@@ -12,7 +12,7 @@ angular.module('madebyaliceApp')
 		];
 
 		$scope.filmingThings = [ { thing: 'Jesus & Alex - Juliet', link: 'http://youtu.be/s3Oso3T_-RM', description: 'director'},
-			{ thing: 'The iClicker Scene (a Office Space spoof)', link: 'http://youtu.be/GfH2eQxUIU0', description: 'director, editor, producer, actress'},
+			{ thing: 'The iClicker Scene (an Office Space spoof)', link: 'http://youtu.be/GfH2eQxUIU0', description: 'director, editor, producer, actress'},
 			{ thing: 'Markr vs iClicker', link: 'http://youtu.be/bnanHIvduMs', description: 'director, set designer'},
 			{ thing: 'CS190 Topics in CSE: Intro to Mobile and Server Programming' , link: 'http://youtu.be/c3sL-CM2Q_U', description: 'presenter' }
 		]; 
