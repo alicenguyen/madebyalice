@@ -8,9 +8,11 @@ angular.module('madebyaliceApp')
     }];
 
 	$scope.workItems = [
-		{'title': 'programming / development'},
-		{'title': 'film / production'},
-		{'title': 'misc.'}
+		// {'title': 'home'},
+		// {'title': 'programming / development'},
+		// {'title': 'film / production'},
+		// {'title': 'fun things'},
+		// {'title': 'about me'}
 	];
 
     $scope.isCollapsed = true;
