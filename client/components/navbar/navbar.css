@@ -10,3 +10,8 @@ header {
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
+
+img.site-logo {
+	width:200px;
+	height:109px;
+}
