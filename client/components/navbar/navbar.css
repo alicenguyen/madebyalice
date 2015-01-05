@@ -11,7 +11,8 @@ header {
 	margin-bottom: 15px;
 }
 
-img.site-logo {
-	width:200px;
-	height:109px;
+img.logo {
+	margin-top:50px;
+	padding:15px;
+	min-width:196px;
 }

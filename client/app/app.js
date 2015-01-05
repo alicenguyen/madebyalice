@@ -8,8 +8,13 @@ angular.module('madebyaliceApp', [
   'ui.bootstrap',
   'ngMaterial'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $urlRouterProvider
-      .otherwise('/');
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
+    $urlRouterProvider .otherwise('/');
     $locationProvider.html5Mode(true);
+
+		// define alternate theme
+		var lightMap = $mdThemingProvider.extendPalette('cyan', { '500': 'ffffff'	});
+		$mdThemingProvider.definePalette('lightTheme', lightMap);
+		$mdThemingProvider.theme('default').primaryColor('lightTheme').accentColor('grey');
+
   });

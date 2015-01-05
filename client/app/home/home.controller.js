@@ -1,20 +1,14 @@
 'use strict';
 
 angular.module('madebyaliceApp')
-  .controller('HomeCtrl', function ($scope) {
-      $scope.workThings= [ { thing: 'github', link: 'https://github.com/alicenguyen'},
-		{ thing: 'linkedin', link: 'https://www.linkedin.com/pub/alice-nguyen/65/580/641'},
-		{ thing: 'currently working on (latest demo build)', link: 'http://zingchart-editor.herokuapp.com'}
-	  ];
-	
-		$scope.funThings = [ {thing: 'vsco', link: 'http://nimbus.vsco.co/grid/1'},
-			{thing: 'soundcloud', link: 'https://soundcloud.com/nihms'}
-		];
+.controller('HomeCtrl', function ($scope) {
+	$scope.categories = [
+		{'title': 'home'},
+		{'title': 'projects'},
+		{'title': 'gallery'},
+		{'title': 'about'}
+	];
 
-		$scope.filmingThings = [
-			{ thing: 'Jesus & Alex - Juliet', link: 'http://youtu.be/s3Oso3T_-RM', description: 'director'},
-			{ thing: 'The iClicker Scene (a Office Space spoof)', link: 'http://youtu.be/GfH2eQxUIU0', description: 'director, editor, producer, actress'},
-			{ thing: 'Markr vs iClicker', link: 'http://youtu.be/bnanHIvduMs', description: 'director, set designer'},
-			{ thing: 'CS190 Topics in CSE: Intro to Mobile and Server Programming' , link: 'http://youtu.be/c3sL-CM2Q_U', description: 'presenter' }
-		]; 
-  });
+
+
+});

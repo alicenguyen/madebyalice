@@ -7,13 +7,6 @@ angular.module('madebyaliceApp')
       'link': '/'
     }];
 
-	$scope.workItems = [
-		// {'title': 'home'},
-		// {'title': 'programming / development'},
-		// {'title': 'film / production'},
-		// {'title': 'fun things'},
-		// {'title': 'about me'}
-	];
 
     $scope.isCollapsed = true;
 

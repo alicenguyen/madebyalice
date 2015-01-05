@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
       <link rel="stylesheet" href="app/app.css">
+      <link rel="stylesheet" href="app/directives/card/card.css">
       <link rel="stylesheet" href="app/github/github.css">
       <link rel="stylesheet" href="app/home/home.css">
       <link rel="stylesheet" href="app/main/main.css">
@@ -38,7 +39,11 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div ui-view=""></div>
+		<div layout="column" layout-fill>
+		<md-toolbar ng-include="'components/navbar/navbar.html'"
+				class="md-whiteframe-z1 md-medium-tall" md-scroll-shrink="true"></md-toolbar> 
+		<md-content ui-view=""></md-content>
+		</div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <!-- <script> -->
@@ -55,6 +60,7 @@
     <script src="bower_components/es5-shim/es5-shim.js"></script>
     <script src="bower_components/json3/lib/json3.min.js"></script>
     <![endif]-->
+
     <!-- build:js({client,node_modules}) app/vendor.js -->
       <!-- bower:js -->
       <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -71,10 +77,10 @@
       <script src="bower_components/angular-material/angular-material.js"></script>
       <!-- endbower -->
     <!-- endbuild -->
-
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/directives/card/card.controller.js"></script>
           <script src="app/github/github.controller.js"></script>
           <script src="app/github/github.js"></script>
           <script src="app/home/home.controller.js"></script>
