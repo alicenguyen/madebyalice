@@ -1,7 +1,9 @@
 div.card {
  min-height: 150px;
-	margin:5px;
-	width:200px;
-	height:150px;
+ 	margin:5px;
+	margin-top:20px;
+	margin-bottom:50px;
+	width:150px;
+	height:80px;
 	background:#e0b4b8;
 }

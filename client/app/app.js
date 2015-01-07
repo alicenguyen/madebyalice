@@ -6,7 +6,8 @@ angular.module('madebyaliceApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ngMaterial'
+  'ngMaterial',
+  'ngAnimate'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $urlRouterProvider .otherwise('/');

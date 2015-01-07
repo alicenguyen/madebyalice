@@ -6,20 +6,15 @@
 .body{
 
 }
+
 ul{
 	list-style-type: none;
 }
 
-.works {
-	margin-bottom: 15px;
-}
-
-div.works a {
-	color: #428bca;
-	text-decoration: none;
-}
-
 .card-container {
-	margin-top: 40px;
+	background:#BF360C;
 }
-
+ng-mouseovernimated.bounce:hover {}
+.center-picture {
+	margin-top:50px;
+}

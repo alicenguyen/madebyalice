@@ -1,12 +1,15 @@
-<div layout="column" layout-align="center center" class="card-container">
 
-	<div layout="row" layout-align="center" class="card-row">
-		<card ng-repeat="cat in categories"><p>{{cat.title}}</p></card>	
-
+<div layout="row" layout-align="space-around start" class="card-container md-whiteframe-z2" >
+	<div layout="column" >
+		<div layout="row" layout-align="space-around center" class="card-row" flex="40">
+			<div ><h1 style="color:white;" class="">Hi, I'm&nbsp;</h1></div>
+			<span><h1 style="color:white;" class="animated {{action}}" ng-class="msg1" >{{currentMessage.text}}</h1></span>
+		</div>
 	</div>
-
 </div>
 
-
+<div layout="row" layout-align="center" class="card-row" flex>
+	<card ng-repeat="cat in categories" class="animated bounceInUp"><p>{{cat.title}}</p></card>	
+</div>
 
 
