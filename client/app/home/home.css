@@ -12,9 +12,13 @@ ul{
 }
 
 .card-container {
-	background:#BF360C;
+	/* background:#BF360C; */
 }
 ng-mouseovernimated.bounce:hover {}
 .center-picture {
 	margin-top:50px;
+}
+
+[layout-fill] {
+height: 100%;
 }
