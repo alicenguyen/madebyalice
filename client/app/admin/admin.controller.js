@@ -1,4 +1,9 @@
 'use strict';
+var ProjectInstance = {
+	name: '',
+	type:'',
+	description: ''
+};
 angular.module('madebyaliceApp')
 .controller('AdminCtrl', function ($scope, Projects) {
 	$scope.showAddForm = false;
@@ -8,16 +13,19 @@ angular.module('madebyaliceApp')
 		{name: 'artwork', disable:true, fields: [{key: 'name', value:''}, {key:'type', value:''}, {key:'description', value:''}]}
 	];
 	$scope.selectedTable =  $scope.tables[0];
-	$scope.project= new Projects
+	$scope.project= new Projects();
 	$scope.projects =  Projects.query(function(data){ $scope.projects = data; console.log(data);});
 
 	$scope.addProject = function() {
-
-		Projects.save( $scope.project, function(data) {
-			Projects.query(function(data){ $scope.projects = data; console.log(data);
-				$scope.showAddForm= false;
+		$scope.project = new Projects();
+		$scope.saveProject = function(){
+			$scope.project.$save( function(data) {
+				Projects.query(function(data){ $scope.projects = data; console.log(data);
+					$scope.showAddForm= false;
+				});
+			}, function(err){
 			});
-		}, function(err){console.log(err);});
+		}
 	}
 
 	$scope.deleteProject = function (_id) {
@@ -29,14 +37,23 @@ angular.module('madebyaliceApp')
 
 	$scope.editProject = function(_id) {
 		$scope.showAddForm = true;
-		$scope.project = Projects.get({projId:_id}, function() {
-			$scope.updateProject =  function() {
-				$scope.project.$update();
-				$scope.showAddForm = true;
+		Projects.get({projId:_id}, function(project){
+			$scope.project = project;
+			$scope.saveProject= function() {
+				$scope.project.$update({projId: $scope.project._id}, function(res){
+					console.log("Successfully saved!");
+					$scope.showAddForm = false;
+
+				}, function (err) {
+					console.log(err);
+				});
 
 			}
 		});
-	}
+
+
+
 
 	}
-	);
+}
+);

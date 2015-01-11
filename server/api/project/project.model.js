@@ -1,17 +1,22 @@
 'use strict';
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
-
+Schema = mongoose.Schema;
+var shortId = require('shortid');
 var ProjectSchema = new Schema({
-  name: String,
-  description: String,
-  type: String,
-  dated_start: Date,
-  dated_end:Date,
-  images: Array,
-  press: Array,
-  info: String,
-  active: Boolean
+	_id: {
+		type: String,
+		unique: true,
+		'default': shortId.generate
+	},
+	name: String,
+	description: String,
+	type: String,
+	dated_start: Date,
+	dated_end:Date,
+	images: Array,
+	press: Array,
+	info: String,
+	active: Boolean
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

@@ -2,6 +2,6 @@
 
 angular.module('madebyaliceApp')
 .factory('Projects',[ '$resource', function ($resource) {
-		return  $resource('/api/projects/:projId', {projId:'@projId'}); 
+		return  $resource('/api/projects/:projId', {projId:'@projId'}, {'update':{method:'PUT'}}); 
 	}
   ]);
