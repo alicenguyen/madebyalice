@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('madebyaliceApp')
-.controller('HomeCtrl', function ($scope, $timeout, $interval) {
+.controller('HomeCtrl', function ($scope, $timeout, $interval, Projects) {
 	$scope.categories = [
 		{'title': 'projects'},
 		{'title': 'gallery'},
@@ -33,4 +33,12 @@ angular.module('madebyaliceApp')
 		$scope.currentMessage = $scope.nextMessage;
 		$scope.nextMessage = $scope.messageQueue.shift();
 	}, 2500);
+
+
+	$scope.projects = [{name:'mobile '}, {name: 'web '}, {name: 'systems'}];
+
+	// temp
+	$scope.designs = [ { name: 'Notes' }, {name: 'Photography'}, {name: 'Events'} ];
+
+	$scope.films = [{ name: 'Commercials'}, {name: 'Spoofs'}, {name: 'Music Video'}];
 });

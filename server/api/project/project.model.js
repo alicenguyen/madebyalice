@@ -16,7 +16,12 @@ var ProjectSchema = new Schema({
 	images: Array,
 	press: Array,
 	info: String,
-	active: Boolean
+	active: Boolean,
+	keywords:[{text:String}],
+	start_date: Date,
+	end_date:Date,
+	created: {type: Date, default: Date.now},
+	updated: Date
 });
 
 module.exports = mongoose.model('Project', ProjectSchema);

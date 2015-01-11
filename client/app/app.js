@@ -7,7 +7,8 @@ angular.module('madebyaliceApp', [
   'ui.router',
   'ui.bootstrap',
   'ngMaterial',
-  'ngAnimate'
+  'ngAnimate',
+  'ngTagsInput'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $urlRouterProvider .otherwise('/');
