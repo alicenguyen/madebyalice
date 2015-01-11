@@ -8,6 +8,7 @@
 module.exports = {
   DOMAIN: 'http://localhost:9000',
   SESSION_SECRET: "madebyalice-secret",
+  MONGOLAB_URI: 'mongodb://mba:nimbus2015@ds031711.mongolab.com:31711/development',
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''
 };

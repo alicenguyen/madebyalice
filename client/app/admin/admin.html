@@ -1,0 +1,17 @@
+
+<div layout="row" layout-fill layout-margin>
+	<div flex="33" class="border"> 
+		<md-subheader>Tables: add document</md-subheader>
+		<div layout="column" layout-align="center center">
+			<select ng-model="selectedTable" ng-options="table.name for table in tables" > </select>
+		</div>
+	</div>
+	<div flex="55" class="border">
+			<div ng-repeat="field in selectedTable.fields">
+				<md-text-float  ng-model="field.value" label="{{field.key}}" > </md-text-float><br>
+			</div>
+			<md-button type="submit" ng-click="addProject()"> Add</md-button>
+	</div>
+	<div flex class="border">
+	</div>
+</div>
