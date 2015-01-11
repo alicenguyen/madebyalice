@@ -1,17 +1,75 @@
 
-<div layout="row" layout-fill layout-margin>
-	<div flex="33" class="border"> 
-		<md-subheader>Tables: add document</md-subheader>
-		<div layout="column" layout-align="center center">
+<div layout="row" layout-margin>
+	<div class="border" flex="10"> 
+		<md-subheader>Tables: </md-subheader>
+		<div layout="column" layout-align="center center" layout-padding>
 			<select ng-model="selectedTable" ng-options="table.name for table in tables" > </select>
+			<br />
+			<md-button ng-click="showAddForm=true;"> + </md-button>
 		</div>
 	</div>
-	<div flex="55" class="border">
-			<div ng-repeat="field in selectedTable.fields">
-				<md-text-float  ng-model="field.value" label="{{field.key}}" > </md-text-float><br>
-			</div>
-			<md-button type="submit" ng-click="addProject()"> Add</md-button>
-	</div>
 	<div flex class="border">
-	</div>
+		<md-content>
+			<div ng-show="showAddForm" ng-hide="!showAddForm" >
+				<form class="form-horizontal" style="padding:15px" ng-model="project">
+					<div class="form-group">
+						<label class="col-sm-2 control-label">Name </label>
+						<div class="col-sm-4">
+							<input class="form-control" id="" placeholder="Name"
+									ng-model="project.name">
+						</div>
+						<label class="col-sm-2 control-label">Type</label>
+						<div class="col-sm-4">
+							<input class="form-control" id="" placeholder="Type"
+									ng-model="project.type">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="" class="col-sm-2 control-label">Description</label>
+						<div class="col-sm-10"> <textarea
+									class="form-control" id="" placeholder="Descrption"
+									rows="3" ng-model="project.description"></textarea>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-offset-2 col-sm-10">
+							<md-button type="submit" ng-click="addProject()" class="btn btn-default">Add </md-button>
+						</div>
+					</div>
+				</form>
+			</div>
+			<md-list ng-show="!showAddForm" ng-hide="showAddForm">
+				<md-item ng-animate="'animate'"ng-repeat="project in projects">
+					<div layout="row" layout-margin layout-fill >
+						<div flex="10"> 
+							<span class="pull-right" style="font-style:400; padding-right:20px;">{{project.name}}	</span>
+						</div>
+						<div flex> <span class="item-label">description:	</span>
+							<span>{{project.description}}</span></div>
+						<div flex="5" class="pull-right"> 
+							<md-button ng-click="editProject(project._id)"> / </md-button> 
+							<md-button ng-click="deleteProject(project._id)"> - </md-button> </div>
+					</div>
+					<div layout="row" layout-margin layout-fill >
+						<div flex="10"> </div>
+						<div flex> <span class="item-label">type:	</span>
+							<span> {{project.type}}</span>
+						</div>
+						<div flex="5"> </div>
+					</div>
+					<div layout="row" layout-margin layout-fill >
+						<div flex="10"> </div>
+						<div flex> <span class="item-label">images:	</span>
+							<span> {{project.images.length}}</span>
+						</div>
+						<div flex="5"> </div>
+					</div>
+					<md-divider></md-divider>
+				</md-item>
+				<!-- Form row -->
+			</md-list>
+		</md-content>
+	</md-list>
 </div>
+
+
