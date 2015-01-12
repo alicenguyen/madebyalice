@@ -3,7 +3,7 @@
 angular.module('madebyaliceApp')
   .config(function ($stateProvider) {
     $stateProvider
-      .state('projects', {
+      .state('main.projects', {
         url: '/projects',
         templateUrl: 'app/projects/projects.html',
         controller: 'ProjectsCtrl'

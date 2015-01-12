@@ -15,25 +15,25 @@ angular.module('madebyaliceApp')
 	$scope.projects =  Projects.query(function(data){ $scope.projects = data; console.log(data);});
 	
 	$scope.types = ['Web', 'Mobile', 'Systems'];
-	$scope.selectedType; 
+	$scope.selectedType = ''; 
 
 	$scope.addProject = function() {
 		$scope.project = new Projects();
 		$scope.saveProject = function(){
-			$scope.project.$save( function(data) {
+			$scope.project.$save( function() {
 				Projects.query(function(data){ $scope.projects = data; console.log(data);
 					$scope.showAddForm= false;
 				});
 			}, function(err){
 			});
-		}
-	}
+		};
+	};
 
 	$scope.deleteProject = function (_id) {
 		Projects.remove({projId: _id}, function(data){
 			console.log(data);
 			Projects.query(function(data){ $scope.projects = data; console.log(data);});
-		})
+		});j
 	};
 
 	$scope.editProject = function(_id) {
@@ -44,22 +44,22 @@ angular.module('madebyaliceApp')
 
 			$scope.saveProject= function() {
 				$scope.project.type = $scope.selectedType;
-				console.log("saving...");
+				console.log('saving...');
 				console.log( $scope.project);
 				$scope.project.$update({projId: $scope.project._id}, function(res){
-					console.log("Successfully saved!");
+					console.log('Successfully saved!');
 					Projects.query(function(data){ $scope.projects = data; console.log(data);});
 					$scope.showAddForm = false;
 				}, function (err) {
 					console.log(err);
 				});
-			}
+			};
 
 			$scope.cancel =function() {
 					$scope.showAddForm = false;
 			};
 		});
-	}
+	};
 
 	$scope.$watchCollection('project.keywords', function(newValue, old){console.log(newValue);});
 }
