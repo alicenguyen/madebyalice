@@ -2,12 +2,11 @@
 
 	<div flex="10">
 		<div layout="column" layout-align="center" class="btn-group" flex style="margin-top:40px;">
-			<md-button  ng-repeat="item in menuItems" class="animated fadeIn" ><p>{{item.name}}</p></md-button>
+			<md-button  ng-repeat="item in menuItems" ui-sref="{{item.state}}" class="animated fadeIn" ><p>{{item.name}}</p></md-button>
 		</div>
 	</div>
-
 	<div layout="column" layout-fill layout-align="start center" class="card-container md-whiteframe-z2" >
-		<img class="logo"src="assets/images/mba-logo-2.png" alt="" height="100" />
+		<a ui-sref="main" ><img class="logo"src="assets/images/mba-logo-2.png" alt="" height="100" /></a>
 		<div layout="column" layout-margin layout-padding >
 		<div ui-view> 
 			<div layout="row" layout-align="start start" class="animated-msgs" flex>

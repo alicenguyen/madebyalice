@@ -30,11 +30,11 @@ angular.module('madebyaliceApp')
 	
 	$scope.menuItems= [
 		{name: 'projects',style:'unselected', state: 'main.projects', items: [{name:'mobile '}, {name: 'web '}, {name: 'systems'}]},
-		{name: 'designs',	style:'unselected', state:'main.designs', items: [ { name: 'Notes' }, {name: 'Photography'}, {name: 'Events'} ]},
+		{name: 'designs',	style:'unselected', state:'main.design', items: [ { name: 'Notes' }, {name: 'Photography'}, {name: 'Events'} ]},
 		{name: 'films',	 	style:'unselected', state:'main.films',  items:  [{ name: 'Commercials'}, {name: 'Spoofs'}, {name: 'Music Video'}]},
 		{name: 'about',  	style:'unselected', state:'main.about', items:[]},
 		{name: 'contact',	style:'unselected', state:'main.contact',items:[]}
 	];
-	$scope.selected='';
+	$scope.selectedMenuItem = $scope.menuItems[0];
 
 });
