@@ -14,7 +14,7 @@ angular.module('madebyaliceApp')
 
 	$scope.projects =  Projects.query(function(data){ $scope.projects = data; console.log(data);});
 	
-	$scope.types = ['Web', 'Mobile', 'Systems'];
+	$scope.types = ['Web', 'iOS', 'Android', 'Systems'];
 	$scope.selectedType = ''; 
 
 	$scope.addProject = function() {

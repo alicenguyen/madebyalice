@@ -1,4 +1,5 @@
-
+<div layout="column" layout-align="start center">
+	<h4>		Projects	</h4>	
 <md-content class="border">
 <md-list >
 <md-item ng-animate="'animate'"ng-repeat="project in projects">
@@ -8,9 +9,6 @@
 	</div>
 	<div flex> <span class="item-label">description:	</span>
 		<span>{{project.description}}</span></div>
-	<div flex="5" class="pull-right"> 
-		<md-button ng-click="editProject(project._id)"> <md-icon icon="assets/images/ic_edit.png"></md-icon></md-button> 
-		<md-button ng-click="deleteProject(project._id)"> <md-icon icon="assets/images/ic_delete.png"> </md-button> </div>
 </div>
 <div layout="row" layout-margin layout-fill >
 	<div flex="10"> </div>
@@ -33,3 +31,4 @@
 </md-content>
 </md-list>
 
+</div>
