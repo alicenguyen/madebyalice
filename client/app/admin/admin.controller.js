@@ -11,10 +11,12 @@ angular.module('madebyaliceApp')
 	$scope.selectedTable =  $scope.tables[0];
 
 	$scope.project= new Projects();
-
 	$scope.projects =  Projects.query(function(data){ $scope.projects = data; console.log(data);});
-	
+
+	// menu attributes
 	$scope.types = ['Web', 'iOS', 'Android', 'Systems'];
+
+
 	$scope.selectedType = ''; 
 
 	$scope.addProject = function() {
@@ -56,11 +58,28 @@ angular.module('madebyaliceApp')
 			};
 
 			$scope.cancel =function() {
-					$scope.showAddForm = false;
+				$scope.showAddForm = false;
 			};
 		});
 	};
 
 	$scope.$watchCollection('project.keywords', function(newValue, old){console.log(newValue);});
+
+	// date picker
+	$scope.format = 'shortDate';
+	$scope.today = function() {
+		$scope.dt = new Date();
+	}
+	$scope.openStart = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
+		$scope.openedStart = true;
+	}
+	$scope.openEnd = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
+		$scope.openedEnd = true;
+	}
+
 }
 );
