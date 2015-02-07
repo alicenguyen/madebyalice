@@ -8,14 +8,14 @@ angular.module('madebyaliceApp')
 		{name: 'images', disable: true},
 		{name: 'artwork', disable:true}
 	];
-	$scope.selectedTable =  $scope.tables[0];
 
-	$scope.project= new Projects();
+	$scope.selectedTable =  $scope.tables[0];
 	$scope.projects =  Projects.query(function(data){ $scope.projects = data; console.log(data);});
+	$scope.project= new Projects();
+
 
 	// menu attributes
 	$scope.types = ['Web', 'iOS', 'Android', 'Systems'];
-
 
 	$scope.selectedType = ''; 
 
@@ -37,17 +37,21 @@ angular.module('madebyaliceApp')
 			Projects.query(function(data){ $scope.projects = data; console.log(data);});
 		});j
 	};
-
+	$scope.keywords = [];	
 	$scope.editProject = function(_id) {
 		$scope.showAddForm = true;
 
 		Projects.get({projId:_id}, function(project){
 			$scope.project = project;
-
+			
+			$scope.$watch('keywords', function(newValue, oldValue){
+				$scope.project.keywords = newValue.map(function(el){return el.text;});
+				console.log($scope.project.keywords);
+				console.log(newValue);
+			});
 			$scope.saveProject= function() {
 				$scope.project.type = $scope.selectedType;
-				console.log('saving...');
-				console.log( $scope.project);
+
 				$scope.project.$update({projId: $scope.project._id}, function(res){
 					console.log('Successfully saved!');
 					Projects.query(function(data){ $scope.projects = data; console.log(data);});

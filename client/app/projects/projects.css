@@ -1,0 +1,17 @@
+.screenshot.ios {
+	height:42%;
+	width:42%;
+	margin:25px;
+}
+
+.projects-container {
+	/* background: #202121; */
+	color: #ADADAD;
+}
+
+.project-card{
+	height:250px;
+	width:200px;
+	cursor: pointer;
+}
+

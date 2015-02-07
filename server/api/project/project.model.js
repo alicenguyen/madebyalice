@@ -17,7 +17,7 @@ var ProjectSchema = new Schema({
 	press: Array,
 	info: String,
 	active: Boolean,
-	keywords:[{text:String}],
+	keywords:[String],
 	start_date: Date,
 	end_date:Date,
 	created: {type: Date, default: Date.now},

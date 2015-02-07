@@ -15,7 +15,6 @@ var moment = require('moment');
 
 // Connect to database
 mongoose.connect(config.mongo.uri, config.mongo.options);
-console.log(config.mongo);
 // Populate DB with sample data
 if(config.seedDB) { require('./config/seed'); }
 

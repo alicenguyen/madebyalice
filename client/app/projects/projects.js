@@ -7,5 +7,10 @@ angular.module('madebyaliceApp')
         url: 'projects',
         templateUrl: 'app/projects/projects.html',
         controller: 'ProjectsCtrl'
-      });
+      })
+	  .state('main.projects.detail', {
+	  	url: '/:name',
+		templateUrl: 'app/projects/projectsDetail.html',
+		controller: 'ProjectsDetailCtrl'
+	  });
   });

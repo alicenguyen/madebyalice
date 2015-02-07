@@ -29,9 +29,10 @@ angular.module('madebyaliceApp')
 	}, 2500);
 	
 	$scope.menuItems= [
-		{name: 'projects',style:'unselected', state: 'main.projects', items: [{name:'mobile '}, {name: 'web '}, {name: 'systems'}]},
-		{name: 'designs',	style:'unselected', state:'main.design', items: [ { name: 'Notes' }, {name: 'Photography'}, {name: 'Events'} ]},
-		{name: 'films',	 	style:'unselected', state:'main.films',  items:  [{ name: 'Commercials'}, {name: 'Spoofs'}, {name: 'Music Video'}]},
+		{name: 'home', state: 'main', items:[]},
+		{name: 'projects',style:'unselected', state: 'main.projects', items: []},
+		{name: 'artwork',	style:'unselected', state:'main.design', items: [ ]},
+		{name: 'videos',	 	style:'unselected', state:'main.films',  items:  []},
 		{name: 'about',  	style:'unselected', state:'main.about', items:[]},
 		{name: 'contact',	style:'unselected', state:'main.contact',items:[]}
 	];
