@@ -2,6 +2,11 @@
 var mongoose = require('mongoose'),
 Schema = mongoose.Schema;
 var shortId = require('shortid');
+var Keyword = new Schema({
+	text: String
+}, {strict: false
+});
+
 var ProjectSchema = new Schema({
 	_id: {
 		type: String,
@@ -17,11 +22,11 @@ var ProjectSchema = new Schema({
 	press: Array,
 	info: String,
 	active: Boolean,
-	keywords:[String],
+	keywords: [Keyword],
 	start_date: Date,
 	end_date:Date,
 	created: {type: Date, default: Date.now},
 	updated: Date
-});
+}, {strict: false});
 
 module.exports = mongoose.model('Project', ProjectSchema);
