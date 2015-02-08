@@ -51,20 +51,14 @@ angular.module('madebyaliceApp')
 			$scope.saveProject= function() {
 				$scope.project.type = $scope.selectedType;
 				console.log($scope.project.keywords);
-				Projects.remove({projId: $scope.project._id}, function(){
-					$scope.project.$save(function(data){
-						Projects.query(function(data){ $scope.projects = data; console.log(data);});
-						$scope.showAddForm = false;
-					});
-				});
 
-				// $scope.project.$update({projId: $scope.project._id}, function(res){
-				// 	console.log('Successfully saved!');
-				// 	Projects.query(function(data){ $scope.projects = data; console.log(data);});
-				// 	$scope.showAddForm = false;
-				// }, function (err) {
-				// 	console.log(err);
-				// });
+				$scope.project.$update({projId: $scope.project._id}, function(res){
+					console.log('Successfully saved!');
+					Projects.query(function(data){ $scope.projects = data; console.log(data);});
+					$scope.showAddForm = false;
+				}, function (err) {
+					console.log(err);
+				});
 
 			};
 

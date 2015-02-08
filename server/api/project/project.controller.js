@@ -34,13 +34,14 @@ exports.update = function(req, res) {
   Project.findById(req.params.id, function (err, project) {
     if (err) { return handleError(res, err); }
     if(!project) { return res.send(404); }
-	console.log(req.body.keywords);
     var updated = _.merge(project, req.body);
-	console.log(updated);
-    updated.save(function (err) {
-      if (err) { return handleError(res, err); }
-      return res.json(200, project);
-    });
+	project.remove(function(err){
+		if(err) { return handleError(res, err); }
+	  Project.create(req.body, function(err, project) {
+		if(err) { return handleError(res, err); }
+		return res.json(201, project);
+	  });
+	});
   });
 };
 
