@@ -19,4 +19,14 @@ angular.module('madebyaliceApp', [
 		$mdThemingProvider.definePalette('lightTheme', lightMap);
 		$mdThemingProvider.theme('default').primaryColor('lightTheme').accentColor('grey');
 
-  });
+  })
+
+  .controller('RootCtrl', ['$scope', function($scope){
+
+    $scope.setState = function(url) {
+      $scope.activeState = url;
+      console.log($scope.activeState);
+    };
+
+  }]);
+

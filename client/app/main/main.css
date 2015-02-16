@@ -12,7 +12,7 @@ ul{
 }
 
 .card-container {
-	/* background:#BF360C; */
+	 background:#BF360C;
 }
 ng-mouseovernimated.bounce:hover {}
 .center-picture {
@@ -27,11 +27,11 @@ height: 100%;
 	background: #999999;
 }
 .c2 {
-	background: #ADADAD; 
+	background: #ADADAD;
 }
 
 .c3 {
-	background: #DEDEDE; 
+	background: #DEDEDE;
 }
 
 ul {
@@ -51,3 +51,21 @@ ul {
 	background: none;
 }
 
+.main-container {
+  background-color: #f5f5f5;
+}
+
+.header-logo {
+  margin: 10px;
+}
+.box {
+  height:200px;
+  width:200px;
+  margin:5px;
+  padding:15px;
+}
+.boxes{
+  height:400px;
+  padding:50px;
+  margin:20px;
+}

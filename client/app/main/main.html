@@ -1,14 +1,23 @@
+<div layout="column" layout-fill>
+  <md-divider></md-divider>
 
-<div layout="column" style="height:100%;" layout-fill>
+  <div flex ui-view class="main-container" layout-align="start start">
+    <div class="boxes" layout="row" layout-align="center center" layout-fill>
+      <div class="box" flex="33" style="background-color:#e1e1e1;" ui-sref="main.projects">Projects</div>
+      <div flex layout="column">
+        <div layout="row" layout-align="center center" class="row1">
+          <div class="box" flex style="background-color:#e1e1e1;" ui-sref="main.design">Box of things</div>
+          <div class="box" flex style="height:150px;"></div>
+          <div class="box" flex style="height:150px;"></div>
+        </div>
+        <div layout="row" layout-align="center center" class="row2" >
+          <div class="box" flex style="height:150px;"></div>
+          <div flex class="box" style="background-color:#e1e1e1;" ui-sref="main.about">About Me</div>
+          <div class="box" flex style="background-color:#e1e1e1;" ui-sref="main.contact">Contact me</div>
+        </div>
+      </div>
+    </div>
 
-	<div >
-		<div layout="row" layout-align="start end" flex >
-			<a ui-sref="main" ><img class="logo"src="assets/images/mba-logo-2.png" alt="" height="100" /></a>
-			<div flex> </div>
-			<md-button  ng-repeat="item in menuItems" ui-sref="{{item.state}}" class="animated fadeIn" ><p>{{item.name}}</p></md-button>
-		</div>
-	</div>
-	<md-divider></md-divider>
-	<div flex ui-view class="main-containter">  This is the home view.</div>
+  </div>
 </div>
 

@@ -1,50 +1,5 @@
-<div layout="column" class="projects-container" layout-fill flex>
-	<div layout="row" >
-		<div flex> back	</div>
-		<div flex> <md-subheader>Projects</md-subheader> </div>
-		<div flex> </div>
-		</div >
-		<div layout="row" layout-align="center space-between" ui-view >
-			<md-card  class="project-card" ng-repeat="project in projects" ui-sref="main.projects.detail({name: project.name})">
-			<img src="photos[0].url" class="screenshot ios" alt="" />
-			<h4>{{project.name}}</h4>
-			</md-card>
-		</div>
-	</div>
+<div layout="column" layout-fill flex>
+  <span>Projects</span>
+ This is the projects view.
+</div>
 
-
-
-	<!-- <div layout="column" layout-align="start center"> -->
-		<!-- 	<h4>		Projects	</h4> -->	
-		<!-- <md-content class="border"> -->
-		<!-- <md-list > -->
-		<!-- <md-item ng-animate="'animate'"ng-repeat="project in projects"> -->
-		<!-- <div layout="row" layout-margin layout-fill > -->
-			<!-- 	<div flex="10"> --> 
-				<!-- 		<span class="pull-right" style="font-style:400; padding-right:20px;">{{project.name}}	</span> -->
-				<!-- 	</div> -->
-			<!-- 	<div flex> <span class="item-label">description:	</span> -->
-				<!-- 		<span>{{project.description}}</span></div> -->
-			<!-- </div> -->
-		<!-- <div layout="row" layout-margin layout-fill > -->
-			<!-- 	<div flex="10"> </div> -->
-			<!-- 	<div flex> <span class="item-label">type:	</span> -->
-				<!-- 		<span> {{project.type}}</span> -->
-				<!-- 	</div> -->
-			<!-- 	<div flex="5"> </div> -->
-			<!-- </div> -->
-		<!-- <div layout="row" layout-margin layout-fill > -->
-			<!-- 	<div flex="10"> </div> -->
-			<!-- 	<div flex> --> 
-				<!-- 		<span class="item-label">keywords:	</span> -->
-				<!-- 	</div> -->
-			<!-- 	<div flex="5"> </div> -->
-			<!-- </div> -->
-		<!-- <md-divider></md-divider> -->
-		<!-- </md-item> -->
-		<!-- <1!-- Form row --1> -->
-		<!-- </md-list> -->
-		<!-- </md-content> -->
-		<!-- </md-list> -->
-
-		<!-- </div> -->

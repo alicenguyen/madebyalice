@@ -1,9 +1,10 @@
 
-a:hover{
+.active ,a:active{
 	text-decoration: none;
 	color:#FF3706;
-	
 }
+
+
 header {
 	color:#241F20;
 	font-weight: 600;
@@ -15,3 +16,4 @@ img.logo {
 	padding:15px;
 	min-width:156px;
 }
+

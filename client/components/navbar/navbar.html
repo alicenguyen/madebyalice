@@ -1,7 +1,14 @@
-<div class="md-toolbar-tools" ng-controller="HomeCtrl" >
-	<img class="logo"src="assets/images/mba-logo-2.png" alt="" height="100" />
-	<!-- fill up the space between left and right area -->
-	<span flex></span>
+<div class="md-toolbar-tools" ng-controller="NavbarCtrl">
+  <!--<img class="logo"src="assets/images/mba-logo-2.png" alt="" height="100" />-->
+  <h5>alice nguyen</h5>
+  <span flex></span>
 
-	<!-- <md-button class="md-accent"ng-repeat="category in categories"> {{category.title}} </md-button> -->
+  <ul class="nav nav-pills">
+    <li ng-repeat="item in menu" class="{{item.active}}"><a ui-sref={{item.state}}> {{item.title}} </a></li>
+  </ul>
 </div>
+
+
+
+
+

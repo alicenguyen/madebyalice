@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-		uri: 'mongodb://alice:nimbus2015@ds031541.mongolab.com:31541/mba'
+		uri: 'mongodb://alice:nimbus2015@ds031711.mongolab.com:31711/development'
   },
   seedDB: true
 };

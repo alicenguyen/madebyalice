@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('madebyaliceApp')
-.controller('AdminCtrl', function ($scope, Projects) {
+.controller('AdminCtrl', function ($scope, Projects, Keywords) {
 	$scope.showAddForm = false;
 	$scope.tables= [
 		{name: 'projects', disable: false},
@@ -47,6 +47,10 @@ angular.module('madebyaliceApp')
 
 		Projects.get({projId:_id}, function(project){
 			$scope.project = project;
+			$scope.autoTags = Keywords.query(function(){
+			console.log($scope.autoTags);
+			}
+			);
 
 			$scope.saveProject= function() {
 				$scope.project.type = $scope.selectedType;
