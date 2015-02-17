@@ -19,7 +19,8 @@ angular.module('madebyaliceApp')
         active: false
       },
       {
-       title: 'Box of Things',
+        title: 'Box of Things',
+        state: 'main.about',
         active: false
       },
       {
@@ -31,6 +32,13 @@ angular.module('madebyaliceApp')
 
     $scope.isCollapsed = true;
 
+    $scope.updateActive = function (index) {
+      for (var i in $scope.menu) {
+        $scope.menu[i].active = false;
+      }
+
+      $scope.menu[index].active = true;
+    }
 
 
     $scope.isActive = function (route) {
