@@ -1,5 +1,15 @@
 <div layout="column" layout-fill flex>
-    <span>Projects</span>
- This is the projects view.
+  <div ng-repeat="project in projects">
+    <div layout="row">
+
+      <div flex>
+        <h4>{{project.name}}
+          <small style="color:#037E8C;">{{project.type}}</small>
+        </h4>
+        <p>{{project.description}}</p>
+      </div>
+      <div flex></div>
+    </div>
+  </div>
 </div>
 

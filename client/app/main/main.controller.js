@@ -7,4 +7,6 @@ angular.module('madebyaliceApp')
 
     var boxOfThings = ['Doodles', 'Short videos'];
 
+
+
   });

@@ -1,50 +1,35 @@
-
-<!--<div layout="column" layout-fill ng-controller="MainCtrl">-->
-
-  <!--<div ng-include="'components/navbar/navbar.html'" ></div>-->
-  <!--<md-divider></md-divider>-->
-
-  <!--<div flex ui-view class="main-container" layout-align="start start">-->
-    <!--<div class="boxes" layout="row" layout-align="center center" layout-fill>-->
-
-      <!--<div class="box animated fadeIn group-box1" flex="25"  ui-sref="main.projects">-->
-        <!--<span> Projects </span>-->
-        <!--<div style="padding:20px;">-->
-         <!--<ul>-->
-           <!--<li>mobile development</li>-->
-           <!--<li>web development</li>-->
-         <!--</ul>-->
-        <!--</div>-->
-      <!--</div>-->
-
-      <!--<div flex layout="column" class="group-box2">-->
-        <!--<div layout="row" layout-align="center center" class="row1">-->
-          <!--<div class="box animated fadeIn" flex ui-sref="main.design">Box of things</div>-->
-          <!--<div class="box-empty" flex></div>-->
-          <!--<div class="box-eppty" flex></div>-->
-        <!--</div>-->
-        <!--<div layout="row" layout-align="center center" class="row2">-->
-          <!--<div class="box-empty" flex></div>-->
-          <!--<div flex class="box animated fadeIn" ui-sref="main.about">About Me</div>-->
-          <!--<div class="box animated fadeIn" flex ui-sref="main.contact">Contact me</div>-->
-        <!--</div>-->
-      <!--</div>-->
-    <!--</div>-->
-
-  <!--</div>-->
-<!--</div>-->
-
 <div layout="row" layout-fill ng-controller="MainCtrl">
+
   <!--sidenav-->
- <div flex="15" layout="column" class="padding">
-  <span>alice nguyen</span>
-   <br/>
-   <ul  class="nav nav-pills nav-stacked" ng-controller="NavbarCtrl">
-     <li ng-repeat="item in menu" ng-class="{active: item.active}" ng-click="updateActive($index)" ui-sref="{{item.state}}">{{item.title}}</li>
-   </ul>
- </div>
+  <div flex="15" layout="column" class="padding">
+    <h2 ui-sref="main" style="cursor:pointer;">alice nguyen</h2>
+    {{$route}}
+    <br/>
+    <ul class="nav nav-pills nav-stacked" ng-controller="NavbarCtrl">
+      <li ng-repeat="item in menu" ng-class="{active: isActive('{{item.url}}')}" ng-click="updateActive($index)"
+          ui-sref="{{item.state}}" style="cursor:pointer;">{{item.title}}
+      </li>
+    </ul>
+  </div>
   <div class="divider"></div>
-  <div flex class="main-container" ui-view>
-      <canvas id="canvas" mba-lines resize></canvas>
+
+
+  <!--main body-->
+  <div flex class="main-container" ui-view layout="column" layout-align="center center">
+    <div layout="row">
+      <div flex style="margin:5px;padding:5px;">
+        <div><h1>Hello, world!</h1></div>
+        <p>Hello, world. I'm Alice and I'm a software developer. I plan on showcasing some of my works and projects here so stay tuned!</p>
+      </div>
+      <div flex style="margin:5px;padding:5px;">
+      </div>
+    </div>
+    <div layout="row">
+      <div flex style="margin:5px;padding:5px;">
+      </div>
+      <div flex style="margin:5px;padding:5px;">
+      </div>
+    </div>
+    <canvas id="canvas" mba-lines resize></canvas>
   </div>
 </div>
